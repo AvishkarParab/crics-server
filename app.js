@@ -13,7 +13,9 @@ require('./db/conn');
 app.use(express.json());
 //router path
 app.use(require('./router/auth'));
-
+app.use('/',(req,res)=>{
+    return res.status(200).json('Server running!!')
+})
 app.listen(PORT,()=>{
     console.log(`Server started at port ${PORT}`);
 });
